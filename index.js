@@ -1,6 +1,6 @@
 const express = require('express')();
 const bodyParser = require('body-parser');
-const app = require('express')();
+const app = express();
 const pug = require('pug');
 //const http = require('http').createServer(app);
 //const io = require('socket.io')(http);
