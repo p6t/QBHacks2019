@@ -7,7 +7,7 @@ const app = express();
 // Setup express
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-//app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
