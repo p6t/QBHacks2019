@@ -19,6 +19,6 @@ const perPage = process.env.PAGE_SIZE || 10;
 app.get('/', (req, res) => {
     //res.send('Whas poppin Jimbo??');
     //console.log('done did it!');
-    res.render('index');
+    res.render('chatroom');
 })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
