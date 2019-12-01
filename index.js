@@ -2,8 +2,8 @@ const express = require('express')();
 const bodyParser = require('body-parser');
 const app = require('express')();
 const pug = require('pug');
-const http = require('http').createServer(app);
-const io = require('socket.io')(http);
+//const http = require('http').createServer(app);
+//const io = require('socket.io')(http);
 
 // Setup express
 app.set('view engine', 'pug');
@@ -24,7 +24,7 @@ app.get('/', function(req, res){
 app.listen(PORT, ()=> {
     console.log(`server is up on port: ${PORT}`)
 });
-
+/*
 io.on('connection', function(socket){
   console.log(username + ' connected');
   socket.on('disconnect', function(){
