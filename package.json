@@ -14,7 +14,7 @@
     "mongodb": "^3.1.4",
     "mongoose": "^5.2.14"
   },
-  "description": "This app demonstrates setting up a simple NodeJS / MongoDB application to be deployed on Azure. If users have the password, they can post log messages with a chosen name. Posts are sorted in reverse chronological order and paginated.",
+  "description": "Simple webapp test",
   "main": "index.js",
   "repository": {
     "type": "git",
