@@ -13,7 +13,7 @@ router.get('/login', function (req, res) {
 router.post('/login', function (req,res) {
   console.log(req.body.username);
   res.cookie("user,school",req.body.username);
-  res.render('login');
+  res.render('chat');
 })
 
 module.exports = router

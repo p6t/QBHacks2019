@@ -1,13 +1,14 @@
+
 var app = require('express')();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
-
-var username = 'chris';
+var username;
 //var schoolname = 'Rutgers University';
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/public/index.html');
+app.get('/chat', function(req, res){
   res.cookie('user,school', username, {maxAge: 10800}).send('cookie set');
+  res.render('chat');
+  //res.sendFile(__dirname + '/views/chat.ejs');
 });
 
 io.on('connection', function(socket){
