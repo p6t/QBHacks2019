@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Test</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <title>Chatroom</title>
+    <link rel="stylesheet" href="/static/css/chatroom.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/js/jquery-1.7.2.min.js"></script>
+    <script src="/static/js/jquery.cookie.js"></script>
+    <script src="/static/js/chatroom.js"></script>
   </head>
   <body>
-    <div class="container">
-      <fieldset>
-        <form action="/" method="post">
-          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-          <input type="submit" class="ghost-button" value="Get Weather">
-        </form>
-      </fieldset>
-    </div>
-  </body>
+    <h1>Chatroom</h2>
+    <p>Simple chatroom app built with <a href="http://nodejs.org/" target="_blank">node.js</a> and <a href="http://socket.io/" target="_blank">socket.io</a></p>
+    <p id="author-info">By Tom de Simone &middot; <a href="https://twitter.com/#!/Xeelix" target="_blank">Twitter</a> &middot; <a href="https://github.com/tomds" target="_blank">Github</a> &middot; <a href="http://meatfinish.co.uk/" target="_blank">Blog</a></p>
+    <form id="change-username">
+      <label for="field-username">Your username: </label>
+      <input name="username" id="field-username" />
+      <input type="submit" value="Change" />
+      <span id="username-submit-result"></span>
+    </form>
+    <div id="messages"></div>
+    <div id="users"><ul></ul></div><br class="clearer" />
+    <form id="enter-message">
+      <input name="message" id="field-message" placeholder="Your message"/>
+      <input type="submit" value="Enter" />
+    </form>
+  </body> 
 </html>
