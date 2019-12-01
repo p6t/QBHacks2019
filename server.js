@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 app.use(express.static('public'));
 app.get("/",(req,res)=>{
   //res.send("Hello World!");
-  res.render('index');
+  res.render('login');
 })
 app.use('/', login);
 app.set('view engine','ejs');
