@@ -17,8 +17,8 @@ const PORT = process.env.PORT || 3000;
 const perPage = process.env.PAGE_SIZE || 10;
 //const defaultPassword = process.env.HACKERLOG_PASSWORD || 'P@ssw0rd!';
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/public/index.html');
+app.get('/', function(req, res) {
+    res.render('index');
 });
 
 app.listen(PORT, ()=> {
