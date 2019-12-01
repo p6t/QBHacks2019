@@ -1,1 +1,1 @@
-heroku config:set NODE_ENV=staging
+web: node index.js
