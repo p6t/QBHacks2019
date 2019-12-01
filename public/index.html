@@ -2,11 +2,35 @@
 <html>
 <head>
   <title>APC Chat</title>
-  <link rel="stylesheet" type="text/css" href="public/style.css">
+  <style>
+    h1 {
+              color:#009900;
+              font-size:46px;
+          }
+          p {
+              font-size:17px;
+              margin-top:-25px;
+              margin-left:15px;
+          }
+
+          .button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: green;
+}
+  </style>
 </head>
 <body>
   <h1>Chat up a storm!</h1>
-  <button type="button" onclick="alert('redirect to log in page')">Log in</button>
-  <button type="button" onclick="alert('redirect to create account page')">Sign up</button>
+  <button class="button" onclick="alert('redirect to log in page')">Log in</button>
+  <button class="button" onclick="alert('redirect to create account page')">Sign up</button>
 </body>
 </html>
