@@ -17,7 +17,8 @@ const perPage = process.env.PAGE_SIZE || 10;
 const defaultPassword = process.env.HACKERLOG_PASSWORD || 'P@ssw0rd!';
 
 app.get('/', (req, res) => {
-    res.send('Whas poppin Jimbo??');
-    console.log('done did it!');
+    //res.send('Whas poppin Jimbo??');
+    //console.log('done did it!');
+    res.render('index');
 })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
