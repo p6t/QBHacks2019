@@ -20,7 +20,3 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
-const server = http.listen(port, function() {
-    console.log('listening on *:');
-});
-
