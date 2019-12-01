@@ -12,6 +12,6 @@ app.get("/",(req,res)=>{
 })
 app.use('/', login);
 app.set('view engine','ejs');
-app.listen(5000,()=>{
-  console.log("Running on port 5000!")
+app.listen(3000,()=>{
+  console.log("Running on port 3000!")
 })
