@@ -12,7 +12,7 @@
     "express-validator": "^5.3.0",
     "moment": "^2.22.2",
     "mongodb": "^3.1.4",
-    "mongoose": "^5.2.14"
+    "mongoose": "^5.7.5"
   },
   "description": "This app demonstrates setting up a simple NodeJS / MongoDB application to be deployed on Azure. If users have the password, they can post log messages with a chosen name. Posts are sorted in reverse chronological order and paginated.",
   "main": "index.js",
