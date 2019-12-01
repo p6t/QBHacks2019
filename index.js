@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const pug = requore('pug');
 
 // Setup express
 app.set('view engine', 'pug');
