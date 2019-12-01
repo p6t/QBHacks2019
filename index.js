@@ -1,9 +1,23 @@
-var app = require('express')();
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
+const login = require('./routes/login');
 
-var username = 'chris';
-var schoolname = 'Rutgers University';
+app.use(bodyParser.urlencoded({ extended: false }))
+//var username = 'chris';
+//var schoolname = 'Rutgers University';
+
+app.use(bodyParser.json())
+app.use(express.static('public'));
+app.get("/",(req,res)=>{
+  //res.send("Hello World!");
+  res.render('index');
+})
+app.use('/', login);
+app.set('view engine','ejs');
+
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
 });
