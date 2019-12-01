@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Get env variables
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const perPage = process.env.PAGE_SIZE || 10;
 //const defaultPassword = process.env.HACKERLOG_PASSWORD || 'P@ssw0rd!';
 
