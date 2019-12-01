@@ -7,6 +7,7 @@ var username = 'chris';
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
+  res.cookie('user,school', username, {maxAge: 10800}).send('cookie set');
 });
 
 io.on('connection', function(socket){
