@@ -1,33 +1,25 @@
-var app = require('express')();
-var http = require('http').createServer(app);
-var io = require('socket.io')(http);
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const moment = require('moment');
+const app = express();
 
-var username = 'chris';
+// Setup express
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
+// Get env variables
+const port = process.env.PORT || 3000;
+const perPage = process.env.PAGE_SIZE || 10;
+//const defaultPassword = process.env.HACKERLOG_PASSWORD || 'P@ssw0rd!';
 
-io.on('connection', function(socket){
-  console.log(username + ' connected');
-  socket.on('disconnect', function(){
-    console.log(username + ' disconnected');
-  });
-});
-
-http.listen(3000, function(){
-  console.log('listening on *:3000');
-});
-
-io.on('connection', function(socket){
-  socket.broadcast.emit('Hello!');
-});
-
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    if(msg.length != 0){
-      io.emit('chat message', username + ": " + msg);
-    }
-  });
-});
+app.get('/', (req, res) => {
+    //res.send('Whas poppin Jimbo??');
+    //console.log('done did it!');
+    res.render('chatroom');
+})
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
