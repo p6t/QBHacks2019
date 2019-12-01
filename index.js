@@ -3,7 +3,7 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
 var username = 'chris';
-var schoolname = 'Rutgers University';
+//var schoolname = 'Rutgers University';
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
@@ -27,7 +27,7 @@ io.on('connection', function(socket){
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     if(msg.length != 0){
-      io.emit('chat message', username + " [" + schoolname+ "] : " + msg);
+      io.emit('chat message', username + ": " + msg);
     }
   });
 });
