@@ -1,23 +1,26 @@
-
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 const pug = require('pug');
 
 // Setup express
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var port = process.env.PORT || 3000;
 app.set('view engine', 'pug');
+app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+// Get env variables
+const PORT = process.env.PORT || 3000;
+const perPage = process.env.PAGE_SIZE || 10;
+//const defaultPassword = process.env.HACKERLOG_PASSWORD || 'P@ssw0rd!';
+
+app.get('/', function(req, res) {
+    res.render('index');
 });
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
+app.listen(PORT, ()=> {
+    console.log(`server is up on port: ${PORT}`)
 });
 
-http.listen(port, function(){
-  console.log('listening on *:' + port);
-});
+
