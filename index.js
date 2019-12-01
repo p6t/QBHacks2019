@@ -2,8 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const pug = require('pug');
-//const http = require('http').createServer(app);
-//const io = require('socket.io')(http);
 
 // Setup express
 app.set('view engine', 'pug');
@@ -24,22 +22,4 @@ app.get('/', function(req, res) {
 app.listen(PORT, ()=> {
     console.log(`server is up on port: ${PORT}`)
 });
-/*
-io.on('connection', function(socket){
-  console.log(username + ' connected');
-  socket.on('disconnect', function(){
-    console.log(username + ' disconnected');
-  });
-});
 
-io.on('connection', function(socket){
-  socket.broadcast.emit('Hello!');
-});
-
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    if(msg.length != 0){
-      io.emit('chat message', username + ": " + msg);
-    }
-  });
-});
