@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Chatroom</title>
-    <link rel="stylesheet" href="/static/css/chatroom.css" />
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/static/js/jquery-1.7.2.min.js"></script>
-    <script src="/static/js/jquery.cookie.js"></script>
-    <script src="/static/js/chatroom.js"></script>
-  </head>
-  <body>
-    <h1>Chatroom</h2>
-    <p>Simple chatroom app built with <a href="http://nodejs.org/" target="_blank">node.js</a> and <a href="http://socket.io/" target="_blank">socket.io</a></p>
-    <p id="author-info">By Tom de Simone &middot; <a href="https://twitter.com/#!/Xeelix" target="_blank">Twitter</a> &middot; <a href="https://github.com/tomds" target="_blank">Github</a> &middot; <a href="http://meatfinish.co.uk/" target="_blank">Blog</a></p>
-    <form id="change-username">
-      <label for="field-username">Your username: </label>
-      <input name="username" id="field-username" />
-      <input type="submit" value="Change" />
-      <span id="username-submit-result"></span>
-    </form>
-    <div id="messages"></div>
-    <div id="users"><ul></ul></div><br class="clearer" />
-    <form id="enter-message">
-      <input name="message" id="field-message" placeholder="Your message"/>
-      <input type="submit" value="Enter" />
-    </form>
-  </body> 
+<head>
+  <title>APC Chat</title>
+  <style>
+    h1 {
+              color:#009900;
+              font-size:46px;
+          }
+          p {
+              font-size:17px;
+              margin-top:-25px;
+              margin-left:15px;
+          }
+  </style>
+</head>
+<body>
+  <h1>Chat up a storm!</h1>
+  <button> type="button" onclick="alert('redirect to log in page')">Log in</button>
+  <button> type="button" onclick="alert('redirect to create account page')">Sign up</button>
+  <p>This is the first paragraph</p>
+</body>
 </html>
